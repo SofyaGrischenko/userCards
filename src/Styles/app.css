@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(127 144 175) ;
+}
+
+.App{
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.Card{
+    border: 2px outset rgb(0, 0, 0) ;
+    border-radius: 5%;
+    height: 200px;
+    width: 350px;
+    padding: 15px;
+    margin: 10px;
+    font-size: 20px;
+    color: azure;
+    font-family: monospace;
+    background-color: #99a4c6;;
+}
+
+.Card *{
+    background-color: #99a4c6;;
+}
+
+.Card button{
+    margin-top: 15px;
+    padding: 7px;
+    border-radius: 10px;
+    color: white;
+    transition: .2s linear;
+    background: #8895ac;
+    
+}
+
+.Card button:hover {
+    box-shadow: 0 0 0 2px  transparent, 0 0 0 4px #9ba2af;
+}
+
