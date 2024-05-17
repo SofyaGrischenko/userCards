@@ -1,0 +1,10 @@
+@use '../../../Styles/variables' as colors;
+
+.CardsList{
+  display: flex;
+  padding: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: colors.$defaultColor;
+  min-height: 100vh;
+}
