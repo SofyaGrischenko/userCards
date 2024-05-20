@@ -1,27 +1,43 @@
-import { useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import axios from 'axios';
-import Card from '../../Cards/Card';
-import css from './CardsList.module.scss'
+import Card from '../../Cards/Card'
+import css from 'styled-components'
+
+
+const СardListCSS = css.div`
+padding: 15px;
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+background-color: ${props => props.color};
+min-height: 100vh;
+`
+
 
 
 const CardsList = () =>{
 const [cards, setCards] = useState([])
-
-
+const [bgColor, setBgColor] = useState('#7f90af')
+  
 useEffect(() =>{
-//const response = 
 axios.get("https://jsonplaceholder.typicode.com/users")
     .then((response) => {setCards(response.data)})
     .catch((error) => console.error(error))   
   }, []);
 
+ 
   return (
-    <div className = {css.CardsList}> 
+    <СardListCSS color = {bgColor}>   
       {cards.map(user => 
-            <Card key = {user.id} props = {user}></Card>
+            <Card 
+              key={user.id} 
+              user={user} 
+              setBgColor={setBgColor}>
+             </Card>
         )}
-    </div>
+    </СardListCSS>
   )
 }
+
 
 export default CardsList;

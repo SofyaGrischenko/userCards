@@ -1,27 +1,33 @@
-import React, { useState } from "react";
-import css from './Cards.module.scss'
+import React from 'react';
+import Button from "../Button/Button";
+import css from 'styled-components'
 
 
-const Card = ({props}) => {
+const СardStyle = css.div`
+border: 2px outset rgb(0, 0, 0) ;
+  border-radius: 5%;
+  height: 200px;
+  width: 350px;
+  padding: 15px;
+  color: #ffffff;
+  background-color:  #909bbd;
+  margin-top: 15px;
+`
 
-    const [isOpen, setIsOpen] = useState(false)
-    const {name, email, address} = props
-    const {city, street, suite} = address
 
+const Card = ({user, setBgColor}) => {
 
-    const toggle = () => {
-        setIsOpen((isOpen) => !isOpen)
-    }
-
+    const {name, email, address} = user
 
     return (
-        <div className = {css.card}> 
+        <СardStyle> 
             <p>Name: {name}</p>
-            <p>Email: {email}</p>
-            <button className = {css.card__button} onClick={toggle}> address </button>
-            {isOpen && <p>{city}, {street}, {suite}</p>}   
-         
-        </div> 
+            <p>Email: {email}</p> 
+            <Button 
+                address={address}
+                setBgColor={setBgColor}>
+            </Button>
+        </СardStyle> 
     )
 }
 

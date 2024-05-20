@@ -1,8 +1,8 @@
 import CardsList from './Components/CardsList/CardsList/CardsList';
-import './Styles/app.scss'
-
+import React from 'react'
 
 const App = () => {
+
 
     return(
       <>
